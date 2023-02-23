@@ -63,7 +63,7 @@ router.delete("/notes/:id", (req, res) => {
       notesData.splice(i, 1);
       const noteJSON = JSON.stringify(notesData, null, 2);
 
-      writeFileAsync("data/db.json", noteJSON)
+      writeFileAsync("db/db.json", noteJSON)
         .then(function () {
           // Send success response with updated notesData
           res.json(notesData);
